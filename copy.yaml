@@ -1,4 +1,10 @@
 ---
+
+ - name: Create test directory
+   file:
+     path: /root/test
+     state: directory
+     
  - name: Copying index.html to servers
    hosts: all
    become: yes 
@@ -8,4 +14,3 @@
         src: /root/index.html
         dest: /root/test/index.html
         mode: 0777
-        
