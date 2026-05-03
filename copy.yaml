@@ -1,0 +1,11 @@
+---
+ - name: Copying index.html to servers
+   hosts: all
+   become: yes 
+   tasks:
+    - name: copy index.html to servers
+      copy:
+        src: /root/index.html
+        dest: /root/test/index.html
+        mode: 0777
+        
